@@ -21,6 +21,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		69FE70FF229DAA5A46613DBA /* Pods_HY_Networking_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE0966447E4A4BBE138E2D7 /* Pods_HY_Networking_Tests.framework */; };
+		6E754EF7260493EC00027BE2 /* HY_NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E754EF6260493EC00027BE2 /* HY_NetworkManager.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		8C7257C5C7D343B13937E23C /* Pods_HY_Networking_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B434E51246F2D6F0C14E4071 /* Pods_HY_Networking_Example.framework */; };
@@ -37,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0CB655B7D3BD09BBBF2E9E77 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0CB655B7D3BD09BBBF2E9E77 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		2D9CD7F6D45446907EA8FC41 /* Pods-HY_Networking_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HY_Networking_Tests.debug.xcconfig"; path = "Target Support Files/Pods-HY_Networking_Tests/Pods-HY_Networking_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		40F356B048F361DFA617DCE4 /* Pods-HY_Networking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HY_Networking_Example.debug.xcconfig"; path = "Target Support Files/Pods-HY_Networking_Example/Pods-HY_Networking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HY_Networking_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HY_Networking_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,12 +60,14 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		634F6EBFDC77F1FE22964857 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		634F6EBFDC77F1FE22964857 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		68BBE9F1951C262785B5BC06 /* Pods-HY_Networking_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HY_Networking_Example.release.xcconfig"; path = "Target Support Files/Pods-HY_Networking_Example/Pods-HY_Networking_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6AE0966447E4A4BBE138E2D7 /* Pods_HY_Networking_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HY_Networking_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E754EF5260493EC00027BE2 /* HY_NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HY_NetworkManager.h; sourceTree = "<group>"; };
+		6E754EF6260493EC00027BE2 /* HY_NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HY_NetworkManager.m; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AD129C3F59873A90E6D140AA /* HY_Networking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HY_Networking.podspec; path = ../HY_Networking.podspec; sourceTree = "<group>"; };
+		AD129C3F59873A90E6D140AA /* HY_Networking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HY_Networking.podspec; path = ../HY_Networking.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B434E51246F2D6F0C14E4071 /* Pods_HY_Networking_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HY_Networking_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB363FF1246FC76D8675969C /* Pods-HY_Networking_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HY_Networking_Tests.release.xcconfig"; path = "Target Support Files/Pods-HY_Networking_Tests/Pods-HY_Networking_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +140,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* HY_NETWORKINGViewController.h */,
 				6003F5A6195388D20070C39A /* HY_NETWORKINGViewController.m */,
+				6E754EF5260493EC00027BE2 /* HY_NetworkManager.h */,
+				6E754EF6260493EC00027BE2 /* HY_NetworkManager.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -193,7 +198,6 @@
 				2D9CD7F6D45446907EA8FC41 /* Pods-HY_Networking_Tests.debug.xcconfig */,
 				CB363FF1246FC76D8675969C /* Pods-HY_Networking_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +262,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -346,10 +351,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HY_Networking_Example/Pods-HY_Networking_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/HY_Networking/HY_Networking.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HY_Networking.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +374,7 @@
 				6003F59E195388D20070C39A /* HY_NETWORKINGAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* HY_NETWORKINGViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				6E754EF7260493EC00027BE2 /* HY_NetworkManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

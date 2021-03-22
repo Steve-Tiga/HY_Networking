@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,12 +19,108 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erT-gb-0aS">
+                                <rect key="frame" x="24" y="60" width="147" height="45"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="h66-Fm-JDp"/>
+                                </constraints>
+                                <state key="normal" title="post请求">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.97254901959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="postRequestAction:" destination="whP-gf-Uak" eventType="touchUpInside" id="qb9-zd-1aF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoU-cu-Krt">
+                                <rect key="frame" x="221" y="60" width="130" height="45"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="kID-6m-5Ou"/>
+                                </constraints>
+                                <state key="normal" title="get请求">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.97254901959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getRequestAction:" destination="whP-gf-Uak" eventType="touchUpInside" id="jss-Bd-rtb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGG-vz-FvD">
+                                <rect key="frame" x="24" y="150" width="327" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.99879601880000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="nBK-CX-PJG"/>
+                                </constraints>
+                                <state key="normal" title="断点下载">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.97254901959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected" title="暂停"/>
+                                <connections>
+                                    <action selector="downloadAction:" destination="whP-gf-Uak" eventType="touchUpInside" id="xQ4-cV-Och"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezL-mK-Msb">
+                                <rect key="frame" x="24" y="257" width="327" height="45"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="rUS-dr-oMC"/>
+                                </constraints>
+                                <state key="normal" title="删除下载的文件">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.97254901959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeResumeDownloadFile:" destination="whP-gf-Uak" eventType="touchUpInside" id="jMn-8v-BxT"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s5w-sI-w1H">
+                                <rect key="frame" x="24" y="213" width="276" height="4"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTa-zi-x8i">
+                                <rect key="frame" x="324" y="204.5" width="26" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="erT-gb-0aS" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="60" id="0LT-6W-ONW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XTa-zi-x8i" secondAttribute="trailing" constant="9" id="0UK-1d-le3"/>
+                            <constraint firstItem="XTa-zi-x8i" firstAttribute="leading" secondItem="s5w-sI-w1H" secondAttribute="trailing" constant="24" id="4Tw-js-YMM"/>
+                            <constraint firstItem="ezL-mK-Msb" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="8" id="8SI-EW-UBN"/>
+                            <constraint firstItem="s5w-sI-w1H" firstAttribute="top" secondItem="PGG-vz-FvD" secondAttribute="bottom" constant="18" id="9XR-2z-82t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ezL-mK-Msb" secondAttribute="trailing" constant="8" id="BT3-0m-aA8"/>
+                            <constraint firstItem="XTa-zi-x8i" firstAttribute="centerY" secondItem="s5w-sI-w1H" secondAttribute="centerY" id="HLL-Bt-x94"/>
+                            <constraint firstItem="PGG-vz-FvD" firstAttribute="top" secondItem="erT-gb-0aS" secondAttribute="bottom" constant="45" id="KGu-Sb-BUg"/>
+                            <constraint firstItem="hoU-cu-Krt" firstAttribute="width" secondItem="erT-gb-0aS" secondAttribute="width" multiplier="0.885246" id="MQu-xi-21M"/>
+                            <constraint firstItem="hoU-cu-Krt" firstAttribute="top" secondItem="erT-gb-0aS" secondAttribute="top" id="Mt4-Gf-Lo2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hoU-cu-Krt" secondAttribute="trailing" constant="8" id="Plf-tP-b3X"/>
+                            <constraint firstItem="s5w-sI-w1H" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="8" id="ZUI-la-tAp"/>
+                            <constraint firstItem="erT-gb-0aS" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="8" id="aDw-sa-S6f"/>
+                            <constraint firstItem="hoU-cu-Krt" firstAttribute="leading" secondItem="erT-gb-0aS" secondAttribute="trailing" constant="50" id="bvn-bX-0tv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PGG-vz-FvD" secondAttribute="trailing" constant="8" id="lWi-uz-G6l"/>
+                            <constraint firstItem="ezL-mK-Msb" firstAttribute="top" secondItem="s5w-sI-w1H" secondAttribute="bottom" constant="40" id="qpG-C9-EpE"/>
+                            <constraint firstItem="PGG-vz-FvD" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="8" id="zem-Lz-nEE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="downloadButton" destination="PGG-vz-FvD" id="jv5-Sd-tb7"/>
+                        <outlet property="resumeDownloadLabel" destination="XTa-zi-x8i" id="N9D-7y-nW8"/>
+                        <outlet property="resumeDownloadProgress" destination="s5w-sI-w1H" id="xWk-4H-MMw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="304.80000000000001" y="432.23388305847078"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
