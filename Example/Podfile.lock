@@ -15,7 +15,7 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - HY_Networking (0.1.0):
-    - AFNetworking
+    - AFNetworking (~> 4.0.1)
 
 DEPENDENCIES:
   - HY_Networking (from `../`)
@@ -30,7 +30,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  HY_Networking: ad07c16a879f362cda087a3c6a75a6c681497398
+  HY_Networking: 7459bd9e07fb5c51c1d96e1a571a24906c4ae7a4
 
 PODFILE CHECKSUM: 9bc6217ce70bf74486d3a4bed194d98b263b3baf
 

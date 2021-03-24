@@ -258,11 +258,11 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];//打开文件管理器
     BOOL fileExist = [fileManager fileExistsAtPath:downloadPath];
     if (fileExist) {
-        comp ? comp(nil, [NSString stringWithFormat:@"file://%@",downloadPath], nil) : nil;
+        comp ? comp(nil, [NSString stringWithFormat:@"%@",downloadPath], nil) : nil;
         return nil;
     }
     BOOL folderExist = [fileManager fileExistsAtPath:downloadDirectory];
-    if (folderExist) {
+    if (!folderExist) {
         [fileManager createDirectoryAtPath:downloadDirectory withIntermediateDirectories:YES attributes:nil error:nil];//创建Download目录
     }
     
@@ -303,7 +303,7 @@
         NSString *downloadDirectory = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:folderName ? folderName : @"Download"];
         NSFileManager *fileManager = [NSFileManager defaultManager];//打开文件管理器
         BOOL folderExist = [fileManager fileExistsAtPath:downloadDirectory];
-        if (folderExist) {
+        if (!folderExist) {
             [fileManager createDirectoryAtPath:downloadDirectory withIntermediateDirectories:YES attributes:nil error:nil];//创建Download目录
         }
         NSString *filePath = [downloadDirectory stringByAppendingPathComponent:response.suggestedFilename];//拼接文件路径
