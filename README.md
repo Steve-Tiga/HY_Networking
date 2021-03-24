@@ -21,7 +21,37 @@ pod 'HY_Networking'
 ```
 
 ## 方法使用
-###  1.post请求
+### 1.设置
+```
+// 设置全局网络请求
+[HY_NetworkManager globalConfigWithBlock:^(AFHTTPSessionManager * _Nonnull sessionManager) {
+    // 可以在这里设置请求超时时间，默认是30秒
+    sessionManager.requestSerializer.timeoutInterval = 60.0f;
+    // 可以在这里设置请求头，也可以调用setValue:forHTTPHeaderField:进行单独设置
+//        [sessionManager.requestSerializer setValue:@"cookie" forHTTPHeaderField:@"Cookie"];
+}];
+
+//设置通用参数
+NSMutableDictionary *keyDic = [NSMutableDictionary dictionary];
+[keyDic setValue:@"2dca7299f47cae1ada2ab1b864f3ce8c" forKey:@"key"];
+[HY_NetworkManager setPublicParams:keyDic];
+
+// 设置HTTPHeader
+[HY_NetworkManager setValue:@"cookie" forHTTPHeaderField:@"cookie"];
+
+```
+
+### 2. 网络监听
+```
+#pragma mark - ******* 网络监听 ********
+/** 开始监听网络状态，一旦状态发生变化，将会通过block返回 */
++ (void)startMonitoringNetworkStatusWithBlock:(nullable HY_NetworkStatusBlock)block;
+
+/** 当前网络状态，默认为HY_NetworkStatusUnknown，调用方法后可获取真实值：startMonitoringNetworkStatusWithBlock: */
++ (HY_NetworkStatus)getNetworkStatus;
+```
+
+###  3.post请求
 
 ```
 NSDictionary *parameters = @{@"name": @"古风二首 二"};
@@ -32,7 +62,7 @@ NSDictionary *parameters = @{@"name": @"古风二首 二"};
 }];
 ```
 
-### 2. get请求
+### 4. get请求
 ```
 //该请求需要设置参数key，我这里把key当做公共参数，如需测试请吧appdelegate中设置公共参数的代码取消注释
 NSDictionary *parameters = @{@"city":@"北京"};
@@ -44,7 +74,7 @@ NSDictionary *parameters = @{@"city":@"北京"};
 
 ```
 
-### 3. 断点下载
+### 5. 断点下载
 ```
 - (IBAction)downloadAction:(UIButton *)sender {
     static NSURLSessionDownloadTask *resumeTask=nil;
@@ -112,7 +142,7 @@ NSDictionary *parameters = @{@"city":@"北京"};
 
 ```
 
-### 4.上传文件
+### 6.上传文件
 
 ```
 NSData *data = UIImageJPEGRepresentation(self.uploadImage, 0.7f);
@@ -129,6 +159,8 @@ NSString *imageName = [NSString stringWithFormat:@"%@.jpg",str];
     
 }];
 ```
+
+
 
 
 
